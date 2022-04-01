@@ -1,6 +1,6 @@
-import {createStore} from "redux"
+import { createStore, applyMiddleware } from 'redux'
 import CombineReducer from "./Reducers/CombineReducer"
-
-let store=createStore(CombineReducer)
+import thunk from 'redux-thunk'
+let store=createStore(CombineReducer,applyMiddleware(thunk))
 
 export default store
