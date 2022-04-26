@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux"
 import {setEmail,setPassword,Login} from "../Actions/LoginAction"
 function LoginComponent() {
 
-  const myData=useSelector((store)=> store.LoginReducer)
+  const myData=useSelector((store)=> store.LoginReducer)//access store values
   console.log(myData)
-  const dispatch = useDispatch()
+
+  const dispatch = useDispatch()//used to call a function
 
   const handleEmail = (event) => {
     dispatch(setEmail(event.target.value))
@@ -30,4 +31,4 @@ function LoginComponent() {
 export default LoginComponent
 
 
-// dispatch event from component->define function within action->return object to reducer->get action value and execute accurate event within switch statement
+//triggering event in component->go to action->define your function and return object->define your reducer->within reducer define switch statement to handle multiple events->combine your reducer within combineReducer function->create your store variable->add store varibale within index.js file->install middleware and add it in your store file->pass store value as props to App component by using provider->access your store value within compoent by using useSelector Hook
